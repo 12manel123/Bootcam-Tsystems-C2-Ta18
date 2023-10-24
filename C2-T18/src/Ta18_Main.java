@@ -1,7 +1,7 @@
-import com.mysql.cj.jdbc.result.ResultSetMetaData;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -23,15 +23,15 @@ public class Ta18_Main {
     	String dbName="";//Nombre de base de datos usada
     	String tableName="";//Nombre de la tabla usada
     	String entradaTeclado;//Valor usada para el scanner
-    	List<String> lista = new ArrayList<>();//Lista para aÒadir datos
+    	List<String> lista = new ArrayList<>();//Lista para a√±adir datos
     	
         Scanner scanner = new Scanner(System.in);
         
         while (true) {
-            System.out.println("Men˙:");
+            System.out.println("Men√∫:");
             System.out.println("1. Crear Base de Datos");
             System.out.println("2. Crear Tabla");
-            System.out.println("3. AÒadir Par·metros");
+            System.out.println("3. A√±adir Par√°metros");
             System.out.println("4. Mostrar Valores");
             System.out.println("5. Eliminar Valores");
             System.out.println("6. Salir");
@@ -44,7 +44,7 @@ public class Ta18_Main {
             System.out.println("13. Ejercicio 7");
             System.out.println("14. Ejercicio 8");
             System.out.println("15. Ejercicio 9");
-            System.out.print("Ingrese la opciÛn deseada: ");
+            System.out.print("Ingrese la opci√≥n deseada: ");
             int opcion = scanner.nextInt();
             scanner.nextLine();
             switch (opcion) {
@@ -92,7 +92,7 @@ public class Ta18_Main {
                     dbName = scanner.nextLine();
                     System.out.print("Ingrese el nombre de la tabla: ");
                     tableName = scanner.nextLine();
-                	System.out.print("Ingrese la condiciÛn de eliminaciÛn (Ejemplo: id = 1): ");
+                	System.out.print("Ingrese la condici√≥n de eliminaci√≥n (Ejemplo: id = 1): ");
                     String condicion = scanner.nextLine();
                     deleteRecord(dbName, tableName, condicion);
                     break;
@@ -123,7 +123,7 @@ public class Ta18_Main {
                     lista.add("2, 'Articulo2', 200, 2");
                     insertData("Ejercicio1", "ARTICULOS", lista);
 
-                    // Realizar una eliminaciÛn de ejemplo
+                    // Realizar una eliminaci√≥n de ejemplo
                     deleteRecord("Ejercicio1", "ARTICULOS", "Codigo = 1");
 
                     // Mostrar los valores restantes en las tablas
@@ -157,7 +157,7 @@ public class Ta18_Main {
                     lista.add("'98765432','Maria','Perez',2");
                     insertData("Ejercicio2", "EMPLEADOS", lista);
 
-                    // Realizar una eliminaciÛn de ejemplo
+                    // Realizar una eliminaci√≥n de ejemplo
                     deleteRecord("Ejercicio2", "EMPLEADOS", "DNI = '12345678'");
 
                     // Mostrar los valores restantes en las tablas
@@ -189,7 +189,7 @@ public class Ta18_Main {
                     lista.add("'C2','Tornillos',200,1");
                     insertData("Ejercicio3", "CAJAS", lista);
 
-                    // Realizar una eliminaciÛn de ejemplo
+                    // Realizar una eliminaci√≥n de ejemplo
                     deleteRecord("Ejercicio3", "CAJAS", "NumReferencia = 'C1'");
 
                     // Mostrar los valores restantes en las tablas
@@ -221,7 +221,7 @@ public class Ta18_Main {
                     lista.add("2,'Sala2',1");
                     insertData("Ejercicio4", "SALAS", lista);
 
-                    // Realizar una eliminaciÛn de ejemplo
+                    // Realizar una eliminaci√≥n de ejemplo
                     deleteRecord("Ejercicio4", "SALAS", "Codigo = 1");
 
                     // Mostrar los valores restantes en las tablas
@@ -255,7 +255,7 @@ public class Ta18_Main {
                     lista.add("'87654321','Tony','12345678',2");
                     insertData("Ejercicio5", "DIRECTORES", lista);
 
-                    // Realizar una eliminaciÛn de ejemplo
+                    // Realizar una eliminaci√≥n de ejemplo
                     deleteRecord("Ejercicio5", "DIRECTORES", "DNI = '87654321'");
 
                     // Mostrar los valores restantes en las tablas
@@ -297,7 +297,7 @@ public class Ta18_Main {
                     lista.add("2,2,15");
                     insertData("Ejercicio6", "SUMINISTRA", lista);
 
-                    // Realizar una eliminaciÛn de ejemplo
+                    // Realizar una eliminaci√≥n de ejemplo
                     deleteRecord("Ejercicio6", "PIEZAS", "Codigo = 1");
 
                     // Mostrar los valores restantes en las tablas
@@ -312,7 +312,7 @@ public class Ta18_Main {
                     break;
                     
                 case 13:
-                    // Ejercicio 7 CientÌficos
+                    // Ejercicio 7 Cient√≠ficos
                     createDB("Ejercicio7");
 
                     // Crear tabla CIENTIFICOS
@@ -340,7 +340,7 @@ public class Ta18_Main {
                     lista.add("'23456789',2");
                     insertData("Ejercicio7", "ASIGNADO_A", lista);
 
-                    // Realizar una eliminaciÛn de ejemplo
+                    // Realizar una eliminaci√≥n de ejemplo
                     deleteRecord("Ejercicio7", "CIENTIFICOS", "DNI = '23456789'");
 
                     // Mostrar los valores restantes en las tablas
@@ -391,7 +391,7 @@ public class Ta18_Main {
                     lista.add("2,2,2");
                     insertData("Ejercicio8", "VENTA", lista);
 
-                    // Realizar una eliminaciÛn de ejemplo
+                    // Realizar una eliminaci√≥n de ejemplo
                     deleteRecord("Ejercicio8", "CAJEROS", "Codigo = 3");
 
                     // Mostrar los valores restantes en las tablas
@@ -445,7 +445,7 @@ public class Ta18_Main {
                     lista.add("'98765432',2");
                     insertData("Ejercicio9", "RESERVA", lista);
 
-                    // Realizar una eliminaciÛn de ejemplo
+                    // Realizar una eliminaci√≥n de ejemplo
                     deleteRecord("Ejercicio9", "INVESTIGADORES", "DNI = '98765432'");
 
                     // Mostrar los valores restantes en las tablas
@@ -464,7 +464,7 @@ public class Ta18_Main {
 
                
                 default:
-                    System.out.println("OpciÛn no v·lida. Por favor, elija una opciÛn v·lida.");
+                    System.out.println("Opci√≥n no v√°lida. Por favor, elija una opci√≥n v√°lida.");
             }
         }
     }
@@ -482,17 +482,17 @@ public class Ta18_Main {
         try {
             if (conexion != null) {
                 conexion.close();
-                System.out.println("Se ha finalizado la conexiÛn con el servidor");
+                System.out.println("Se ha finalizado la conexi√≥n con el servidor");
             }
         }
-        catch (SQLException ex) {System.out.println("Error al cerrar la conexiÛn: " + ex.getMessage());}
+        catch (SQLException ex) {System.out.println("Error al cerrar la conexi√≥n: " + ex.getMessage());}
     }
     public void createDB(String name) {
         try {
             Statement statement = conexion.createStatement();
             String sql = "CREATE DATABASE IF NOT EXISTS " + name;
             statement.executeUpdate(sql);
-            System.out.println("Base de datos '" + name + "' creada con Èxito.");
+            System.out.println("Base de datos '" + name + "' creada con √©xito.");
         }
         catch (SQLException ex) {System.out.println("Error al crear la base de datos: " + ex.getMessage());}
     }
@@ -501,7 +501,7 @@ public class Ta18_Main {
             Statement statement = conexion.createStatement();
             String sql = "CREATE TABLE IF NOT EXISTS " + db + "." + tableName + " (" + columnDefinitions + ")";
             statement.executeUpdate(sql);
-            System.out.println("Tabla '" + tableName + "' creada con Èxito en la base de datos '" + db + "'.");
+            System.out.println("Tabla '" + tableName + "' creada con √©xito en la base de datos '" + db + "'.");
         } catch (SQLException ex) {
             System.out.println("Error al crear la tabla: " + ex.getMessage());
         }
